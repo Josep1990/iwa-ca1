@@ -1,0 +1,19 @@
+{
+  "name": "movie-project",
+  "version": "1.0.0",
+  "description": "Interactive Web Application CA 1",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Josep1990/iwa-ca1.git"
+  },
+  "author": "Jose Paulo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Josep1990/iwa-ca1/issues"
+  },
+  "homepage": "https://github.com/Josep1990/npiwa-ca1#readme"
+}
