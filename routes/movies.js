@@ -1,4 +1,4 @@
-require("dotenv").config();  //load all the env varialbes on the serve
+require("dotenv").config();  //load all the enviroment varialbes on the serve
 const express = require("express"),
     router = express.Router(),
     axios = require('axios');
@@ -6,18 +6,18 @@ const express = require("express"),
 
 //get movies from api and render as html using ejs template management    
 
-router.get("/", function(req, res){
+router.get("/", function(req, res){ // render the landing page html file
     res.render("landing"); 
 });
 
-router.get("/movies", function (req, res) {
+router.get("/movies", function (req, res) { //render all the popular movies from the TMDB Movies API
     let movies;
 
     function loadMovie(err, allMovies) {
 
-        axios.get(process.env.POPULAR_MOVIES)
+        axios.get(process.env.POPULAR_MOVIES) //fecthing data though axios from the api
             .then(response => {             
-                res.render("movies/popular", { movies: response.data.results });
+                res.render("movies/popular", { movies: response.data.results }); // saving all the result that come as a JSON to an array ot be rendered as html
             })
             .catch(error => {
                 console.log(error);
@@ -32,9 +32,9 @@ router.get("/top-rate", function (req, res) {
 
     function loadMovie(err, allMovies) {
 
-        axios.get(process.env.TOP_RATED)
+        axios.get(process.env.TOP_RATED) 
             .then(response => {             
-                res.render("movies/toprated", { movies: response.data.results });
+                res.render("movies/toprated", { movies: response.data.results });// saving all the result that come as a JSON to an array ot be rendered as html
             })
             .catch(error => {
                 console.log(error);
@@ -51,7 +51,7 @@ router.get("/upcoming", function (req, res) {
 
         axios.get(process.env.UPCOMIMG)
             .then(response => {             
-                res.render("movies/upcoming", { movies: response.data.results });
+                res.render("movies/upcoming", { movies: response.data.results });// saving all the result that come as a JSON to an array ot be rendered as html
             })
             .catch(error => {
                 console.log(error);

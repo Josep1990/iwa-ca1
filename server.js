@@ -1,25 +1,15 @@
 require("dotenv").config();  //load all the env varialbes on the serve
-const express  = require("express"),
+//all the varibles and dependencies required to run the app
+const express  = require("express"), //express is a back end web application framework for Node.js
       app      = express()
-      mongoose = require("mongoose");
+      mongoose = require("mongoose"); //Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node. js
       
-app.use(express.static(__dirname + "/public"));
-app.set("view engine", "ejs");
-// app.use("/stylesheet", express.static("stylesheet"));
+app.use(express.static(__dirname + "/public")); // tell express to use the static files under public directory in this case css
+app.set("view engine", "ejs"); // EJS or Embedded Javascript Templating is a templating engine used by Node.js.
 
-
-// mongoose.connect(process.env.DATABASE_URL);
-// const db = mongoose.connection;
-// db.on("error", (error)=>{ console.error(error);});
-// db.once("open", ()=>{console.log("Connect to the Database");});
-
-// app.use(express.json());
-const movieRouter = require("./routes/movies");
+const movieRouter = require("./routes/movies"); //importing the routes into the server
 app.use("/", movieRouter);
-
-
-
       
-app.listen(process.env.PORT || 3000, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{ //server start on port 3000 
     console.log("Server ON!!!" );
 })

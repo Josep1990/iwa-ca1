@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+//movie schema it would be used to save on the database
 const movieSchema = new mongoose.Schema({
     title:{
         type: String,
