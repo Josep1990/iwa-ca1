@@ -1,0 +1,16 @@
+body{
+    background: #7d90b0 !important;
+   
+}
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #494c52;
+    border-radius: .3rem;
+    color: #fff;
+  }
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px;
+}
