@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 
 // app.use(express.json());
 const movieRouter = require("./routes/movies");
-app.use("/movies", movieRouter);
+app.use("/", movieRouter);
 
 
 

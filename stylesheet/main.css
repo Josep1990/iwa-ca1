@@ -1,0 +1,9 @@
+body{
+    background: #000 !important;
+   
+}
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px;
+}
