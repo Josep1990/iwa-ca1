@@ -7,6 +7,11 @@ const express  = require("express"), //express is a back end web application fra
 app.use(express.static(__dirname + "/public")); // tell express to use the static files under public directory in this case css
 app.set("view engine", "ejs"); // EJS or Embedded Javascript Templating is a templating engine used by Node.js.
 
+const DATABASE_URL_PROD="mongodb+srv://root:student2019222@ca2databases.hxftx.mongodb.net/CA2Databases?retryWrites=true&w=majority"
+mongoose.connect(DATABASE_URL_PROD, { useNewUrlParser: true, useUnifiedTopology: true })
+        .then((result) => console.log('connected to db'))
+        .catch((err) => console.log(err));
+
 const movieRouter = require("./routes/movies"); //importing the routes into the server
 app.use("/", movieRouter);
       
