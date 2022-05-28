@@ -1,0 +1,23 @@
+<%-include("./partials/header")%>
+
+
+
+    <div class="container">
+        <h1 class="header">Movies Saved for later</h1>
+
+        <ul>
+            <%movies.forEach(function(movie){%>                
+                <% if(movie.author.id.equals(currentUser._id)){%>
+                    <li>
+                        <form class="todo-form" action="/index/<%=movie._id%>?_method=DELETE" method="POST">
+                            <button class="btn-delete"><i class="fas fa-trash"></i></button><%= movie.name %>
+                        </form>
+                    </li>
+                <%}%>
+            <%})%>
+        </ul>        
+    </div>
+
+ 
+
+<%-include("./partials/footer")%>

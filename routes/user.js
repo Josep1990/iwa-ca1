@@ -1,7 +1,7 @@
 const express    = require("express"),
       router     = express.Router(),
       passport   = require("passport"),
-      User       = require("../models/user");
+      User       = require("./../models/user");
       
 
 
@@ -12,7 +12,7 @@ const express    = require("express"),
 
 //Show Router ---------Sign up form
 router.get("/register", function(req, res){
-    res.render("movies/register");
+    res.render("user/register");
 });
 
 //Create route --------- Sign up
@@ -26,7 +26,7 @@ router.post("/register", function(req, res){
         }else{
            passport.authenticate("local")(req, res, function(){
                req.flash("success", "Welcome " + user.username);
-               res.redirect("movies/index");
+               res.redirect("/index");
            });
        }
    });
@@ -35,12 +35,12 @@ router.post("/register", function(req, res){
 
 //Show route ---------Login form
 router.get("/login", function(req, res){
-    res.render("movies/login");
+    res.render("user/login");
 });
 
 //Create route -------Login
 router.post("/login", passport.authenticate("local", {
-    successRedirect: "movies/index",
+    successRedirect: "/index",
     failureRedirect: "back",
     failureFlash: true
 }),function(rea, res){

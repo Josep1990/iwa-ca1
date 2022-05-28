@@ -9,9 +9,6 @@ const movieSchema = new mongoose.Schema({
     poster_path:{
         type: String,               
     },
-    release_date:{
-        type: Date
-    },
     overview:{
         type:String
     },

@@ -14,6 +14,7 @@ const express  = require("express"), //express is a back end web application fra
  const User                = require("./models/user"),     
        autenticationRoutes = require("./routes/user"),
        resetPassword       = require("./routes/passwordReset"),
+       userMoviesRoute     = require("./routes/userMovies"),
        movieRoute          = require("./routes/movies"); //importing the routes into the server
 
  
@@ -52,7 +53,7 @@ app.use(function(req, res, next){
 
 app.use(autenticationRoutes);
 app.use("/", movieRoute);
-app.use("movies/index", );
+app.use("/index", userMoviesRoute);
 app.use(resetPassword);
       
 app.listen(process.env.PORT || 3000, ()=>{ //server start on port 3000 
