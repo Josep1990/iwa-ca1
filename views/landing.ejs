@@ -33,6 +33,17 @@
               <li class="nav-item">
                 <a class="nav-link" href="/upcoming">Upcoming</a>
               </li>
+              <% if(!currentUser){%>                   
+                <li class="nav-item">
+                  <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+            <%}else{ %>       
+              <a class="nav-link" href="/logout">Logout</a>                  
+              <a class="nav-link" href="/index">Hello <strong><%= currentUser.username %></strong></a>
+            <% } %>
               
             </ul>
           </div>

@@ -30,10 +30,18 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/upcoming">Upcoming</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li>
+              </li>             
+              <% if(!currentUser){%>                   
+                  <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                  </li>
+              <%}else{ %>       
+                <a class="nav-link" href="/logout">Logout</a>                  
+                <a class="nav-link" href="/index">Hello <strong><%= currentUser.username %></strong></a>
+              <% } %>
               
             </ul>
           </div>
@@ -46,4 +54,16 @@
             
         </div>
       </div>
+      <div class="message">
+        <% if(error && error.length > 0){ %>
+            <div class="alert-error" role="alert">
+               <p><%= error %></p> 
+            </div>
+        <%}%>    
+        <% if(success && success.length > 0){ %>   
+            <div class="alert-success" role="alert">
+                <p><%= success %></p>
+            </div>
+        <%}%>
+    </div>
 <!-- this is the header of all the files excluding the landing page -->
