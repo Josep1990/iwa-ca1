@@ -6,10 +6,6 @@ const movieSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    original_language:{
-        type: String,
-        required: true
-    },
     poster_path:{
         type: String,               
     },
@@ -18,7 +14,14 @@ const movieSchema = new mongoose.Schema({
     },
     overview:{
         type:String
-    }
+    },
+    author: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        }, 
+        username: String
+    },
 })
 
 module.exports = mongoose.model("Movie", movieSchema);

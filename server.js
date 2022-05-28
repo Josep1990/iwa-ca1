@@ -15,5 +15,5 @@ const movieRouter = require("./routes/movies"); //importing the routes into the 
 app.use("/", movieRouter);
       
 app.listen(process.env.PORT || 3000, ()=>{ //server start on port 3000 
-    console.log("Server ON!!!" );
+    console.log("Server ON!!!");
 })
